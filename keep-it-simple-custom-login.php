@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: TD Custom Login
+Plugin Name: Keep it Simple Custom Login
 Plugin URI: http://tylerdigital.com
-Description: Easy login screen customization
+Description: (Really) Easy login screen customization
 Version: 1.0
 Author: Tyler Digital
 Author URI: http://tylerdigital.com
@@ -43,6 +43,7 @@ class TDCustomLogin {
 		// Register admin styles and scripts
 		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
+		add_action( 'admin_init', array( $this, 'add_settings_menu' ) );
 
 		add_action( 'login_head', array( $this, 'register_login_styles' ) );
 	
@@ -154,6 +155,28 @@ class TDCustomLogin {
 		wp_enqueue_script( 'td-custom-login-plugin-script', plugins_url( 'td-custom-login/js/display.js' ) );
 	
 	} // end register_plugin_scripts
+
+	function register_settings() {
+
+	}
+
+	function admin_init() {
+		add_settings_section( 'section-name', 'Section Name', 'tdcl_callback_func_name', 'tdcl-page' );
+
+		add_settings_field( 'field-name', 'Field Name', 'tdcl_field_name_callback', 'tdcl-plugin', 'section-name' );
+	}
+
+	function tdcl_field_name_callback() {
+		$setting = get_option('tdcl-setting');
+		sprintf( __('<input type="text" name="tdcl-setting" value="%s" />'), esc_attr( $setting ) );
+	}
+
+	// Table Data
+	wp_table
+
+	function add_settings_menu() {
+		add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+	}
 	
 	/*--------------------------------------------*
 	 * Core Functions
