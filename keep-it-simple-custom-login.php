@@ -171,9 +171,6 @@ class TDCustomLogin {
 		sprintf( __('<input type="text" name="tdcl-setting" value="%s" />'), esc_attr( $setting ) );
 	}
 
-	// Table Data
-	wp_table
-
 	function add_settings_menu() {
 		add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
 	}
