@@ -3,7 +3,7 @@ Contributors: username1, username2 (this should be a list of wordpress.org useri
 Donate link: http://example.com/
 Tags: comments, spam
 Requires at least: 3.3.1
-Tested up to: 3.3.1
+Tested up to: 3.5.1
 Stable tag: 4.3
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
