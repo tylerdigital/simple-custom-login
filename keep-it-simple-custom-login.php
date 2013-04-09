@@ -188,7 +188,7 @@ class TDCustomLogin {
 	 *
 	 */
 	function apply_color_style( $classes ) {
-		$classes[] = 'red';
+		// $classes[] = 'red';
 		return $classes;
 	} // end action_method_name
 	
