@@ -27,6 +27,8 @@ License:
 
 class TDCustomLogin {
 
+	public $settings;
+
 	/*--------------------------------------------*
 	 * Constructor
 	 *--------------------------------------------*/
@@ -38,12 +40,12 @@ class TDCustomLogin {
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'plugin_textdomain' ) );
+		add_action( 'init', array( $this, 'load_settings' ) );
 		add_filter( 'login_body_class', array( $this, 'apply_color_style' ) );
 
 		// Register admin styles and scripts
 		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
-		add_action( 'admin_init', array( $this, 'add_settings_menu' ) );
 
 		add_action( 'login_head', array( $this, 'register_login_styles' ) );
 
@@ -67,9 +69,6 @@ class TDCustomLogin {
 	     * For more information:
 	     * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 	     */
-		add_action( 'TODO', array( $this, 'action_method_name' ) );
-		add_filter( 'TODO', array( $this, 'filter_method_name' ) );
-
 	} // end constructor
 
 	/**
@@ -156,23 +155,10 @@ class TDCustomLogin {
 
 	} // end register_plugin_scripts
 
-	function register_settings() {
-
-	}
-
-	function admin_init() {
-		add_settings_section( 'section-name', 'Section Name', 'tdcl_callback_func_name', 'tdcl-page' );
-
-		add_settings_field( 'field-name', 'Field Name', 'tdcl_field_name_callback', 'tdcl-plugin', 'section-name' );
-	}
-
-	function tdcl_field_name_callback() {
-		$setting = get_option( 'tdcl-setting' );
-		sprintf( __( '<input type="text" name="tdcl-setting" value="%s" />' ), esc_attr( $setting ) );
-	}
-
-	function add_settings_menu() {
-		add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+	function load_settings() {
+		require_once( plugin_dir_path( __FILE__ ) . 'lib/settings-framework/classes/sf-class-settings.php' );
+		$this->settings = new SF_Settings_API( $id='keep-it-simple-custom-login', 'Simple Custom Login', 'options-general.php', __FILE__ );
+		$this->settings->load_options( plugin_dir_path( __FILE__ ) . 'includes/settings.php' );
 	}
 
 	/*--------------------------------------------*
@@ -189,6 +175,7 @@ class TDCustomLogin {
 	 */
 	function apply_color_style( $classes ) {
 		// $classes[] = 'red';
+		$classes[] = $this->settings->get_option( 'color_scheme' );
 		return $classes;
 	} // end action_method_name
 
@@ -206,4 +193,4 @@ class TDCustomLogin {
 
 } // end class
 
-$plugin_name = new TDCustomLogin();
+$td_custom_login = new TDCustomLogin();
