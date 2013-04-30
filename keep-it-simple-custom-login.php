@@ -156,7 +156,7 @@ class TDCustomLogin {
 	} // end register_plugin_scripts
 
 	function load_settings() {
-		require_once( plugin_dir_path( __FILE__ ) . 'lib/settings-framework/classes/sf-class-settings.php' );
+		require_once plugin_dir_path( __FILE__ ) . 'lib/settings-framework/classes/sf-class-settings.php';
 		$this->settings = new SF_Settings_API( $id='keep-it-simple-custom-login', 'Simple Custom Login', 'options-general.php', __FILE__ );
 		$this->settings->load_options( plugin_dir_path( __FILE__ ) . 'includes/settings.php' );
 	}
