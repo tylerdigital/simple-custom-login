@@ -341,7 +341,7 @@ if ( ! class_exists( 'SF_Settings_API' ) ) {
 			endforeach;
 
 			do_action( $this->id . '_options_updated', $clean, $tabname );
-			// add_settings_error( $this->id, 'save_options', __( 'Settings saved.', 'geczy' ), 'updated' );
+			add_settings_error( $this->id, 'save_options', __( 'Settings saved.', 'geczy' ), 'updated' );
 
 			return apply_filters( $this->id . '_options_on_update', $clean, $tabname );
 		}

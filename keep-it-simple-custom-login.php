@@ -40,7 +40,6 @@ class TDCustomLogin {
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'plugin_textdomain' ) );
-		add_action( 'init', array( $this, 'load_settings' ) );
 		add_filter( 'login_body_class', array( $this, 'apply_color_style' ) );
 
 		// Register admin styles and scripts
@@ -57,6 +56,9 @@ class TDCustomLogin {
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
 		register_uninstall_hook( __FILE__, array( $this, 'uninstall' ) );
+
+		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
+		$this->settings = new TDCustomLogin_Settings( $this );
 
 		/*
 	     * TODO:
@@ -117,7 +119,7 @@ class TDCustomLogin {
 	public function register_login_styles() {
 
 		wp_enqueue_style( 'keep-it-simple-custom-login-login-styles', plugins_url( 'keep-it-simple-custom-login/css/login.css' ) );
-
+		include_once plugin_dir_path( __FILE__ ) . 'css/login.php';
 	} // end register_admin_styles
 
 	public function register_admin_styles() {
@@ -155,41 +157,22 @@ class TDCustomLogin {
 
 	} // end register_plugin_scripts
 
-	function load_settings() {
-		require_once plugin_dir_path( __FILE__ ) . 'lib/settings-framework/classes/sf-class-settings.php';
-		$this->settings = new SF_Settings_API( $id='keep-it-simple-custom-login', 'Simple Custom Login', 'options-general.php', __FILE__ );
-		$this->settings->load_options( plugin_dir_path( __FILE__ ) . 'includes/settings.php' );
-	}
-
 	/*--------------------------------------------*
 	 * Core Functions
 	 *---------------------------------------------*/
 
-	/**
-	 * NOTE:  Actions are points in the execution of a page or process
-	 *        lifecycle that WordPress fires.
-	 *
-	 *    WordPress Actions: http://codex.wordpress.org/Plugin_API#Actions
-	 *    Action Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 */
+	public static function get_option( $option, $default='' ) {
+		global $td_custom_login;
+		$value = $td_custom_login->settings->framework->get_option( $option, $default );
+		if( empty( $value ) ) $value = $default;
+
+		return $value;
+	}
+
 	function apply_color_style( $classes ) {
-		// $classes[] = 'red';
-		$classes[] = $this->settings->get_option( 'color_scheme' );
+		$classes[] = $this->settings->framework->get_option( 'color_scheme' );
 		return $classes;
 	} // end action_method_name
-
-	/**
-	 * NOTE:  Filters are points of execution in which WordPress modifies data
-	 *        before saving it or sending it to the browser.
-	 *
-	 *    WordPress Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *    Filter Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 */
-	function filter_method_name() {
-		// TODO: Define your filter method here
-	} // end filter_method_name
 
 } // end class
 
