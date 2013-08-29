@@ -1,4 +1,4 @@
-<?php $background_image_url = TDCustomLogin::get_option( 'background', plugins_url( 'img/loginbackground.jpg', dirname( __FILE__ ) ) ); ?>
+<?php $background_image_url = TDCustomLogin::get_option( 'background_image' ); ?>
 
 <style>
 body.login {

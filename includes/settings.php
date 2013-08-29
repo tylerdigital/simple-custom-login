@@ -50,8 +50,8 @@ class TDCustomLogin_Settings {
 				),
 
 				array(
-					'name' => 'background',
-					'label' => __( 'Background'),
+					'name' => 'background_image',
+					'label' => __( 'Background Image'),
 					'desc' => __( 'Upload a large image to use as the background of your login screen' ),
 					'type' => 'image',
 					'default' => ''
