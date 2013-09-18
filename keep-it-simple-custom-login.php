@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Keep it Simple Custom Login
+Plugin Name: Simple Custom Login
 Plugin URI: http://tylerdigital.com
 Description: (Really) Easy login screen customization
 Version: 1.0
@@ -105,8 +105,8 @@ class TDCustomLogin {
 	 */
 	public function plugin_textdomain() {
 
-		// TODO: replace "keep-it-simple-custom-login-locale" with a unique value for your plugin
-		$domain = 'keep-it-simple-custom-login-locale';
+		// TODO: replace "simple-custom-login-locale" with a unique value for your plugin
+		$domain = 'simple-custom-login-locale';
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 		load_textdomain( $domain, WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
@@ -118,13 +118,13 @@ class TDCustomLogin {
 	 */
 	public function register_login_styles() {
 
-		wp_enqueue_style( 'keep-it-simple-custom-login-login-styles', plugins_url( 'keep-it-simple-custom-login/css/login.css' ) );
+		wp_enqueue_style( 'simple-custom-login-login-styles', plugins_url( 'simple-custom-login/css/login.css' ) );
 		include_once plugin_dir_path( __FILE__ ) . 'css/login.php';
 	} // end register_admin_styles
 
 	public function register_admin_styles() {
 
-		wp_enqueue_style( 'keep-it-simple-custom-login-admin-styles', plugins_url( 'keep-it-simple-custom-login/css/admin.css' ) );
+		wp_enqueue_style( 'simple-custom-login-admin-styles', plugins_url( 'simple-custom-login/css/admin.css' ) );
 
 	} // end register_admin_styles
 
@@ -133,7 +133,7 @@ class TDCustomLogin {
 	 */
 	public function register_admin_scripts() {
 
-		wp_enqueue_script( 'keep-it-simple-custom-login-admin-script', plugins_url( 'keep-it-simple-custom-login/js/admin.js' ) );
+		wp_enqueue_script( 'simple-custom-login-admin-script', plugins_url( 'simple-custom-login/js/admin.js' ) );
 
 	} // end register_admin_scripts
 
@@ -142,8 +142,8 @@ class TDCustomLogin {
 	 */
 	public function register_plugin_styles() {
 
-		// TODO: Change 'keep-it-simple-custom-login' to the name of your plugin
-		wp_enqueue_style( 'keep-it-simple-custom-login-plugin-styles', plugins_url( 'keep-it-simple-custom-login/css/display.css' ) );
+		// TODO: Change 'simple-custom-login' to the name of your plugin
+		wp_enqueue_style( 'simple-custom-login-plugin-styles', plugins_url( 'simple-custom-login/css/display.css' ) );
 
 	} // end register_plugin_styles
 
@@ -152,8 +152,8 @@ class TDCustomLogin {
 	 */
 	public function register_plugin_scripts() {
 
-		// TODO: Change 'keep-it-simple-custom-login' to the name of your plugin
-		wp_enqueue_script( 'keep-it-simple-custom-login-plugin-script', plugins_url( 'keep-it-simple-custom-login/js/display.js' ) );
+		// TODO: Change 'simple-custom-login' to the name of your plugin
+		wp_enqueue_script( 'simple-custom-login-plugin-script', plugins_url( 'simple-custom-login/js/display.js' ) );
 
 	} // end register_plugin_scripts
 
