@@ -63,7 +63,7 @@ class TDCustomLogin_Settings {
 	}
 
 	function admin_menu() {
-		add_options_page( 'Custom Login Settings', 'Custom Login', 'delete_posts', 'options-custom-login', array($this->framework, 'render') );
+		add_options_page( 'Custom Login Settings', 'Simple Custom Login', 'delete_posts', 'options-custom-login', array($this->framework, 'render') );
 	}
 
 }
