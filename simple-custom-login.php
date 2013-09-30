@@ -58,6 +58,8 @@ class TDCustomLogin {
 		register_uninstall_hook( __FILE__, array( $this, 'uninstall' ) );
 
 		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
+		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) include_once( 'lib/login-logo/login-logo.php' );
+
 		$this->settings = new TDCustomLogin_Settings( $this );
 
 		/*
