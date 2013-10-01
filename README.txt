@@ -1,5 +1,5 @@
 === Plugin Name ===
-Contributors: username1, username2 (this should be a list of wordpress.org userid's)
+Contributors: tylerdigital, croixhaug, scampanella
 Donate link: http://example.com/
 Tags: comments, spam
 Requires at least: 3.3.1
