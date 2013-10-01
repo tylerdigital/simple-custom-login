@@ -27,7 +27,15 @@ if ( empty( $logo_image_url ) ) {
 		display: <?php echo ( empty( $logo_image_url ) ) ?  'none' : 'block'; ?>;
 		background: url(<?php echo $logo_image_url; ?>) no-repeat top center;
 		width: 255px;
+
+		/* CWS Styles */
 		margin-left: 8px;
 		margin-bottom: 16px;
+		background-size: contain;
+		-o-background-size: contain;
+		-webkit-background-size: contain;
+		-khtml-background-size: contain;
+		-moz-background-size: contain;
+		-ms-background-size: contain;
 	}
 </style>
