@@ -1,10 +1,9 @@
 === Plugin Name ===
 Contributors: tylerdigital, croixhaug, scampanella
-Donate link: http://example.com/
-Tags: comments, spam
-Requires at least: 3.3.1
-Tested up to: 3.5.1
-Stable tag: 4.3
+Tags: custom login, login background, login logo, login, wp-login, branding
+Requires at least: 3.5.1
+Tested up to: 3.6.1
+Stable tag: 1.0
 
 Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
 
