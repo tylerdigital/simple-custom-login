@@ -14,10 +14,6 @@ Login Background uses loginbackground.jpg for example */
 	margin-left: 20%;
 }
 
-.login h1 a {
-	display: none;
-}
-
 .login form {
 	margin-left: auto;
 	margin-right: auto;

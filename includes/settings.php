@@ -55,7 +55,15 @@ class TDCustomLogin_Settings {
 					'desc' => __( 'Upload a large image to use as the background of your login screen' ),
 					'type' => 'image',
 					'default' => ''
-				)
+				),
+
+				array(
+					'name' => 'login_logo',
+					'label' => __( 'Logo Image'),
+					'desc' => __( 'Upload a logo image (260x80px recommended) to go above the login form (optional)' ),
+					'type' => 'image',
+					'default' => ''
+				),
 			));
 
 		$page->init();

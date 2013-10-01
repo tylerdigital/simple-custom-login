@@ -28,6 +28,8 @@ License:
 class TDCustomLogin {
 
 	public $settings;
+	public $login_logo;
+	protected static $instance = null;
 
 	/*--------------------------------------------*
 	 * Constructor
@@ -46,7 +48,7 @@ class TDCustomLogin {
 		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'register_admin_scripts' ) );
 
-		add_action( 'login_head', array( $this, 'register_login_styles' ) );
+		add_action( 'login_head', array( $this, 'register_login_styles' ), 20 );
 
 		// Register site styles and scripts
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
@@ -60,19 +62,11 @@ class TDCustomLogin {
 		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
 		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) include_once( 'lib/login-logo/login-logo.php' );
 
-		$this->settings = new TDCustomLogin_Settings( $this );
 
-		/*
-	     * TODO:
-	     * Define the custom functionality for your plugin. The first parameter of the
-	     * add_action/add_filter calls are the hooks into which your code should fire.
-	     *
-	     * The second parameter is the function name located within this class. See the stubs
-	     * later in the file.
-	     *
-	     * For more information:
-	     * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-	     */
+		$this->settings = new TDCustomLogin_Settings( $this );
+		$this->login_logo = new CWS_Login_Logo_Plugin();
+		$this->login_logo->init();
+
 	} // end constructor
 
 	/**
@@ -159,6 +153,23 @@ class TDCustomLogin {
 
 	} // end register_plugin_scripts
 
+	/**
+	 * Return an instance of this class.
+	 *
+	 * @since     1.0.0
+	 *
+	 * @return    object    A single instance of this class.
+	 */
+	public static function get_instance() {
+
+		// If the single instance hasn't been set, set it now.
+		if ( null == self::$instance ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+	}
+
 	/*--------------------------------------------*
 	 * Core Functions
 	 *---------------------------------------------*/
@@ -171,10 +182,11 @@ class TDCustomLogin {
 		return $value;
 	}
 
-	function apply_color_style( $classes ) {
+	public function apply_color_style( $classes ) {
 		$classes[] = $this->settings->framework->get_option( 'color_scheme' );
 		return $classes;
 	} // end action_method_name
+
 
 } // end class
 

@@ -29,7 +29,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 class CWS_Login_Logo_Plugin {
 	static $instance;
-	const CUTOFF = 312;
+	const CUTOFF = 255;
 	var $logo_locations;
 	var $logo_location;
 	var $width = 0;
@@ -76,7 +76,7 @@ class CWS_Login_Logo_Plugin {
 		return $url;
 	}
 
-	private function logo_file_exists() {
+	public function logo_file_exists() {
 		if ( ! isset( $this->logo_file_exists ) ) {
 			foreach ( $this->logo_locations as $location ) {
 				if ( file_exists( $location['path'] ) ) {
@@ -91,7 +91,7 @@ class CWS_Login_Logo_Plugin {
 		return !! $this->logo_file_exists;
 	}
 
-	private function get_location( $what = '' ) {
+	public function get_location( $what = '' ) {
 		if ( $this->logo_file_exists() ) {
 			if ( 'path' == $what )
 				return $this->logo_location[$what];
@@ -174,7 +174,7 @@ class CWS_Login_Logo_Plugin {
 			width: <?php echo self::CUTOFF; ?>px;
 			height: <?php echo $this->get_height(); ?>px;
 			margin-left: 8px;
-			padding-bottom: 16px;
+			margin-bottom: 16px;
 			<?php
 			if ( self::CUTOFF < $this->get_original_width() )
 				$this->css3( 'background-size', 'contain' );
@@ -194,6 +194,3 @@ class CWS_Login_Logo_Plugin {
 	}
 
 }
-
-// Bootstrap
-new CWS_Login_Logo_Plugin;
