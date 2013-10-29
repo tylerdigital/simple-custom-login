@@ -1,4 +1,15 @@
-<?php $background_image_url = TDCustomLogin::get_option( 'background_image' ); ?>
+<?php
+/* Check the settings page for an uploaded image */
+$background_image_url = TDCustomLogin::get_option( 'background_image' );
+
+/* If no image defined in settings, check for file */
+if ( empty ( $background_image_url ) ) {
+	$login_background = TDCustomLogin::get_instance()->login_background;
+	if ( $login_background->background_file_exists() ) {
+		$background_image_url = $login_background->background_location['url'];
+	}
+}
+?>
 <?php
 /* Check the settings page for an uploaded image */
 $logo_image_url = TDCustomLogin::get_option( 'login_logo' );
@@ -8,7 +19,6 @@ if ( empty( $logo_image_url ) ) {
 	if ( TDCustomLogin::get_instance()->login_logo->logo_file_exists() ) {
 		$logo_image_url = esc_url_raw( TDCustomLogin::get_instance()->login_logo->get_location( 'url' ) );
 	}
-
 }
 ?>
 

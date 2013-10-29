@@ -162,10 +162,10 @@ class CWS_Login_Logo_Plugin {
 
 	public function login_head() {
 		$this->init();
-		if ( !$this->logo_file_exists() )
-			return;
 		add_filter( 'login_headerurl', array( $this, 'login_headerurl' ) );
 		add_filter( 'login_headertitle', array( $this, 'login_headertitle' ) );
+		if ( !$this->logo_file_exists() )
+			return;
 	?>
 	<!-- Login Logo plugin for WordPress: http://txfx.net/wordpress-plugins/login-logo/ -->
 	<style type="text/css">

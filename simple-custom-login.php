@@ -29,6 +29,7 @@ class TDCustomLogin {
 
 	public $settings;
 	public $login_logo;
+	public $login_background;
 	protected static $instance = null;
 
 	/*--------------------------------------------*
@@ -61,11 +62,13 @@ class TDCustomLogin {
 
 		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
 		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) include_once( 'lib/login-logo/login-logo.php' );
-
+		if ( !class_exists( 'TD_Login_Background_Plugin' ) ) include_once( 'lib/login-background/login-background.php' );
 
 		$this->settings = new TDCustomLogin_Settings( $this );
 		$this->login_logo = new CWS_Login_Logo_Plugin();
 		$this->login_logo->init();
+		$this->login_background = new TD_Login_Background_Plugin();
+		$this->login_background->init();
 
 	} // end constructor
 
