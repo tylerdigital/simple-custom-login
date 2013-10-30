@@ -55,6 +55,10 @@ class TDCustomLogin {
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_plugin_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_plugin_scripts' ) );
 
+		// Add an action link pointing to the options page.
+		$plugin_basename = 'simple-custom-login' . '.php' ;
+		add_filter( 'plugin_action_links_simple-custom-login/simple-custom-login.php', array( $this, 'add_action_links' ) );
+
 		// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -171,6 +175,21 @@ class TDCustomLogin {
 		}
 
 		return self::$instance;
+	}
+
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_action_links( $links ) {
+		return array_merge(
+			array(
+				'settings' => '<a href="' . admin_url( 'options-general.php?page=options-custom-login' ) . '">' . __( 'Settings', 'simple-custom-login' ) . '</a>'
+			),
+			$links
+		);
+
 	}
 
 	/*--------------------------------------------*
