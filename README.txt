@@ -46,13 +46,21 @@ e.g.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Can I upload files to my theme rather than placing them in the plugin settings? =
 
-An answer to that question.
+Yes! You can place login-logo.png and login-background.jpg (or login-background.png) into your wp-content/ directory and Simple Custom Login will find them there!
 
-= What about foo bar? =
+If you set an image within the plugin settings, Simple Custom Login will always prefer that one, but it will check the wp-content/ directory before defaulting to a blank image.
 
-Answer to foo bar dilemma.
+This means you can set a default for all your new WP installs, just place images at wp-content/login-logo.png and wp-content/login-background.jpg & activate the plugin!
+
+= Can I customize the position of the login box? =
+
+We want to keep this plugin really simple, we chose a default location offset from the center that works well in the majority of cases. If you want to tweak the exact position of the box, this can be done with CSS (or there are more complex plugins available that might allow this control)
+
+= Can I customize the cropping of the image on my phone/tablet/etc? =
+
+Unfortunately not, we're using a CSS property called backround-size: cover; that works nicely on a variety of sizes. This will not be perfect for all images or all screen dimensions. Often this can be solved by finding another image :)
 
 == Screenshots ==
 
