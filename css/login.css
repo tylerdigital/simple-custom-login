@@ -39,14 +39,15 @@ Login Background uses loginbackground.jpg for example */
 
 .login form .input,
 .login input[type="text"] { color: #8c8a8a;}
-input#rememberme {
+
+/*input#rememberme {
 	height: 18px;
 	width: 18px;
 	display: inline;
 	vertical-align: middle;
 	margin: 10px 0;
 }
-
+*/
 /* Login Button (default) Blue Color */
 .wp-core-ui input.button-primary {
 	-moz-border-radius: 4px;
@@ -109,7 +110,6 @@ input#rememberme {
 }
 
 .login #nav {
-	text-shadow: #ADDFFF 0 1.5px 0;
 	margin: 10px 0 0 0;
 	padding: 1px 0px 0;
 	text-align: left;
@@ -146,9 +146,18 @@ input#rememberme {
 	box-shadow: rgba(255,255,255,0) 0 1px 0, inset rgba(255,255,255,0.7) 0 1px 0;
 }
 
+.red.login #nav,
+.red.login #backtoblog {
+	/*text-shadow: #FFADAD 0 1.5px 0;*/
+	text-shadow: none;
+	color: #CC0000;
+}
+
 .red.login #nav a,
 .red.login #backtoblog a {
-	color: #CC0000 !important;
+	/*color: #CC0000 !important;*/
+	text-shadow: none;
+	color: #CC0000;
 }
 
 /* Login Button Green Color */
@@ -176,6 +185,19 @@ input#rememberme {
 .green.login #nav a,
 .green.login #backtoblog a {
 	color: #336633 !important;
+}
+.green.login #nav,
+.green.login #backtoblog {
+	/*text-shadow: #FFADAD 0 1.5px 0;*/
+	text-shadow: none;
+	color: #336633;
+}
+
+.green.login #nav a,
+.green.login #backtoblog a {
+	/*color: #CC0000 !important;*/
+	text-shadow: none;
+	color: #336633;
 }
 
 div.updated,
