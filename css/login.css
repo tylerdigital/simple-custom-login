@@ -4,6 +4,10 @@ Red color - .button-primary-red, #nav-red, #backtoblog-red
 Green color - .button-primary-green, #nav-green, #backtoblog-green 
 Login Background uses loginbackground.jpg for example */
 
+body.login * {
+	margin: 0;
+}
+
 #login {
 	width: 270px;
 	position: relative;
@@ -107,9 +111,11 @@ Login Background uses loginbackground.jpg for example */
 	text-shadow: #ADDFFF 0 1.5px 0;
 	padding: 5px 0px 0 0;
 	text-align: right;
+	margin: 5px 0 0;
 }
 
 .login #nav {
+	text-shadow: #ADDFFF 0 1.5px 0;
 	margin: 10px 0 0 0;
 	padding: 1px 0px 0;
 	text-align: left;
