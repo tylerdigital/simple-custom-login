@@ -60,9 +60,9 @@ class TDCustomLogin {
 		add_filter( 'plugin_action_links_simple-custom-login/simple-custom-login.php', array( $this, 'add_action_links' ) );
 
 		// Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
-		register_activation_hook( __FILE__, array( $this, 'activate' ) );
-		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
-		register_uninstall_hook( __FILE__, array( $this, 'uninstall' ) );
+		register_activation_hook( __FILE__, array( 'TDCustomLogin', 'activate' ) );
+		register_deactivation_hook( __FILE__, array( 'TDCustomLogin', 'deactivate' ) );
+		register_uninstall_hook( __FILE__, array( 'TDCustomLogin', 'uninstall' ) );
 
 		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
 		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) include_once( 'lib/login-logo/login-logo.php' );
@@ -81,7 +81,7 @@ class TDCustomLogin {
 	 *
 	 * @param boolean $network_wide True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog
 	 */
-	public function activate( $network_wide ) {
+	public static function activate( $network_wide ) {
 		// TODO: Define activation functionality here
 	} // end activate
 
@@ -90,7 +90,7 @@ class TDCustomLogin {
 	 *
 	 * @param boolean $network_wide True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog
 	 */
-	public function deactivate( $network_wide ) {
+	public static function deactivate( $network_wide ) {
 		// TODO: Define deactivation functionality here
 	} // end deactivate
 
@@ -99,7 +99,7 @@ class TDCustomLogin {
 	 *
 	 * @param boolean $network_wide True if WPMU superadmin uses "Network Activate" action, false if WPMU is disabled or plugin is activated on an individual blog
 	 */
-	public function uninstall( $network_wide ) {
+	public static function uninstall( $network_wide ) {
 		// TODO: Define uninstall functionality here
 	} // end uninstall
 
