@@ -108,17 +108,23 @@ body.login * {
 }
 
 .login #backtoblog {
-	text-shadow: #ADDFFF 0 1.5px 0;
+	text-shadow: none;
 	padding: 5px 0px 0 0;
 	text-align: right;
 	margin: 5px 0 0;
 }
+.login #backtoblog a {
+	color: #22779d;
+}
 
 .login #nav {
-	text-shadow: #ADDFFF 0 1.5px 0;
+	text-shadow: none;
 	margin: 10px 0 0 0;
 	padding: 1px 0px 0;
 	text-align: left;
+}
+.login #nav a {
+	color: #22779d;
 }
 
 .login #nav a,
