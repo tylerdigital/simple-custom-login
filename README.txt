@@ -5,13 +5,15 @@ Requires at least: 3.5.1
 Tested up to: 4.2
 Stable tag: 1.0
 
-(Really) Easy login screen customization.
+WordPress makes your life easy,  Simple Custom Login make your login snazzy. Create a custom login in just a minutes (no frustration necessary).
 
 == Description ==
 
-Simple Custom Login allows you to quickly apply some fun or custom branding to your login screen. The Simple Interface lets you add your own touch to the login screen without an overwhelming settings page.
+Simple Custom Login is a plugin that allows you to make a custom login for your WordPress blog. There is no coding and no design experience necessary to get your login from boring and plain to something you are willing to login to. 
 
-Your customized page is fully responsive: simply upload your logo & background image and Simple Custom Login will automatically scale & crop your background image to work on every device
+Simple Custom Login allows you to setup: 
+- A background image that fills the space while also being responsively styled.
+- Login buttons/link colors to some closer to matching to your theme's color scheme.
 
 == Installation ==
 
@@ -19,8 +21,20 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload `simple-custom-login` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Install the plugin using the plugin installer within WordPress (or, upload the `simple-custom-login` folder to the `/wp-content/plugins/` directory)
+
+
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+
+== Usage ==
+
+An options page can be found within Settings -> Simple Custom Login
+
+Within the Simple Custom Login options page select the color scheme that you would like the button and link colors to be.
+
+Upload a background image file that you would like to be used for the background of your WordPress login.
+
+Be sure to Save Changes once you are done with your customizations.
 
 == Frequently Asked Questions ==
 
