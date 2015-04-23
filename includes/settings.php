@@ -1,19 +1,4 @@
 <?php
-// $options = array();
-
-// $options[] = array( 'name' => __( 'General' ), 'type' => 'heading' );
-// $options[] = array( 'name' => __( 'Styling' ), 'type' => 'title', 'desc' => __( '' ) );
-// $options[] = array(
-// 	'name' => __( 'Color scheme' ),
-// 	'id'   => 'color_scheme',
-// 	'type' => 'select',
-// 	'tip' => 'Changes the button colors on the login screen',
-// 	'options' => array(
-// 		'' => 'Default (blue)',
-// 		'red' => 'Red',
-// 		'green' => 'Green',
-// 	)
-// );
 
 include_once plugin_dir_path( dirname( __FILE__ ) ) . 'lib/options-buddy-master/class.options-buddy.php';
 class TDCustomLogin_Settings {
@@ -29,38 +14,36 @@ class TDCustomLogin_Settings {
 
 	function admin_init() {
 
-		//set the settings
-
 		$page = $this->framework;
 
-		$page->add_section('basic_section', __( 'Basic Settings' ) );
+		$page->add_section('basic_section', __( 'Basic Settings', 'simple-custom-login' ) );
 
-		$page->get_section('basic_section')->add_fields(array( //remember, we registered basic section earlier
+		$page->get_section('basic_section')->add_fields(array(
 				array(
 					'name' => 'color_scheme',
-					'label' => __( 'Color scheme' ),//you already know it from previous example
-					'desc' => __( 'Changes the button colors on the login screen' ),// this is used as the description of the field
+					'label' => __( 'Color scheme', 'simple-custom-login' ),
+					'desc' => __( 'Changes the button colors on the login screen', 'simple-custom-login' ),
 					'type' => 'select',
 					'default' => '',
 					'options' => array(
-						'' => 'Default (blue)',
-						'red' => 'Red',
-						'green' => 'Green',
+						'' => __( 'Default (blue)', 'simple-custom-login' ),
+						'red' => __('Red', 'simple-custom-login' ),
+						'green' => __( 'Green', 'simple-custom-login' ),
 					)
 				),
 
 				array(
 					'name' => 'background_image',
-					'label' => __( 'Background Image'),
-					'desc' => __( 'Upload a large image to use as the background of your login screen' ),
+					'label' => __( 'Background Image', 'simple-custom-login' ),
+					'desc' => __( 'Upload a large image to use as the background of your login screen', 'simple-custom-login' ),
 					'type' => 'image',
 					'default' => ''
 				),
 
 				array(
 					'name' => 'login_logo',
-					'label' => __( 'Logo Image'),
-					'desc' => __( 'Upload a logo image (260x80px recommended) to go above the login form (optional)' ),
+					'label' => __( 'Logo Image', 'simple-custom-login' ),
+					'desc' => __( 'Upload a logo image (260x80px recommended) to go above the login form (optional)', 'simple-custom-login' ),
 					'type' => 'image',
 					'default' => ''
 				),
@@ -71,7 +54,7 @@ class TDCustomLogin_Settings {
 	}
 
 	function admin_menu() {
-		add_options_page( 'Custom Login Settings', 'Simple Custom Login', 'delete_posts', 'options-custom-login', array($this->framework, 'render') );
+		add_options_page( __( 'Custom Login Settings', 'simple-custom-login' ), __('Simple Custom Login', 'simple-custom-login' ), 'delete_posts', 'options-custom-login', array($this->framework, 'render') );
 	}
 
 }

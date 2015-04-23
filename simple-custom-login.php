@@ -6,6 +6,7 @@ Description: (Really) Easy login screen customization
 Version: 1.0
 Author: Tyler Digital
 Author URI: http://tylerdigital.com
+Text Domain: simple-custom-login
 License:
 
   Copyright 2013 Tyler Digital
