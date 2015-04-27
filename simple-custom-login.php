@@ -2,7 +2,7 @@
 /*
 Plugin Name: Simple Custom Login
 Plugin URI: http://tylerdigital.com
-Description: (Really) Easy login screen customization
+Description: Quickly apply some fun or custom branding to your login screen
 Version: 1.0
 Author: Tyler Digital
 Author URI: http://tylerdigital.com
