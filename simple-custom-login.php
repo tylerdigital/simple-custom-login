@@ -66,12 +66,14 @@ class TDCustomLogin {
 		register_uninstall_hook( __FILE__, array( 'TDCustomLogin', 'uninstall' ) );
 
 		include_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
-		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) include_once( 'lib/login-logo/login-logo.php' );
-		if ( !class_exists( 'TD_Login_Background_Plugin' ) ) include_once( 'lib/login-background/login-background.php' );
-
 		$this->settings = new TDCustomLogin_Settings( $this );
-		$this->login_logo = new CWS_Login_Logo_Plugin();
-		$this->login_logo->init();
+		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) {
+			include_once( 'lib/login-logo/login-logo.php' );
+			$this->login_logo = new CWS_Login_Logo_Plugin();
+			$this->login_logo->init();
+		}
+		
+		if ( !class_exists( 'TD_Login_Background_Plugin' ) ) include_once( 'lib/login-background/login-background.php' );
 		$this->login_background = new TD_Login_Background_Plugin();
 		$this->login_background->init();
 
