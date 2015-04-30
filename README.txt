@@ -48,6 +48,8 @@ If you set an image within the plugin settings, Simple Custom Login will always 
 
 This means you can set a default for all your new WP installs, just place images at wp-content/login-logo.png and wp-content/login-background.jpg & activate the plugin!
 
+Thanks to code from Mark Jaquith's [Login Logo](https://wordpress.org/plugins/login-logo/) plugin for this functionality
+
 = Can I customize the position of the login box? =
 
 We want to keep this plugin really simple, we chose a default location offset from the center that works well in the majority of cases. If you want to tweak the exact position of the box, this can be done with CSS (or there are more complex plugins available that might allow this control)
