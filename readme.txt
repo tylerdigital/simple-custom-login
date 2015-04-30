@@ -19,12 +19,7 @@ Make your login screen uniquely yours in under 2 minutes (no frustration necessa
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
 1. Install the plugin using the plugin installer within WordPress (or, upload the `simple-custom-login` folder to the `/wp-content/plugins/` directory)
-
 
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
@@ -69,4 +64,4 @@ Unfortunately not, we're using a CSS property called backround-size: cover; that
 == Changelog ==
 
 = 1.0 =
-Initial Release
+* Initial Release
