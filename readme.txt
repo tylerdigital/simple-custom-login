@@ -1,19 +1,21 @@
 === Simple Custom Login ===
 Contributors: tylerdigital, croixhaug, scampanella
-Tags: custom login, login background, login logo, login, wp-login, branding
+Tags: custom login, login background, login logo, login, wp-login, branding, login screen, theme login, style login
 Requires at least: 3.5.1
 Tested up to: 4.2
 Stable tag: 1.0
 
-WordPress makes your life easy,  Simple Custom Login make your login snazzy. Create a custom login in just a minutes (no frustration necessary).
+Quickly apply some fun or custom branding to your login screen
 
 == Description ==
 
-Simple Custom Login is a plugin that allows you to make a custom login for your WordPress blog. There is no coding and no design experience necessary to get your login from boring and plain to something you are willing to login to. 
+Simple Custom Login allows you to set a custom login for your WordPress site without any code.
 
-Simple Custom Login allows you to setup: 
-- A background image that fills the space while also being responsively styled.
-- Login buttons/link colors to some closer to matching to your theme's color scheme.
+Simple Custom Login allows you to: 
+- Upload a background image – it fills the space on any device
+- Choose from basic color options – in case your image doesn't look good with the default blue buttons & links
+
+Make your login screen uniquely yours in under 2 minutes (no frustration necessary)
 
 == Installation ==
 
@@ -45,6 +47,8 @@ Yes! You can place login-logo.png and login-background.jpg (or login-background.
 If you set an image within the plugin settings, Simple Custom Login will always prefer that one, but it will check the wp-content/ directory before defaulting to a blank image.
 
 This means you can set a default for all your new WP installs, just place images at wp-content/login-logo.png and wp-content/login-background.jpg & activate the plugin!
+
+Thanks to code from Mark Jaquith's [Login Logo](https://wordpress.org/plugins/login-logo/) plugin for this functionality
 
 = Can I customize the position of the login box? =
 
