@@ -3,7 +3,7 @@
 Plugin Name: Simple Custom Login
 Plugin URI: http://tylerdigital.com
 Description: Quickly apply some fun or custom branding to your login screen
-Version: 1.0
+Version: 1.0.1
 Author: Tyler Digital
 Author URI: http://tylerdigital.com
 Text Domain: simple-custom-login
@@ -69,9 +69,9 @@ class TDCustomLogin {
 		$this->settings = new TDCustomLogin_Settings( $this );
 		if ( !class_exists( 'CWS_Login_Logo_Plugin' ) ) {
 			include_once( 'lib/login-logo/login-logo.php' );
-			$this->login_logo = new CWS_Login_Logo_Plugin();
-			$this->login_logo->init();
 		}
+		$this->login_logo = new CWS_Login_Logo_Plugin();
+		$this->login_logo->init();
 		
 		if ( !class_exists( 'TD_Login_Background_Plugin' ) ) include_once( 'lib/login-background/login-background.php' );
 		$this->login_background = new TD_Login_Background_Plugin();
