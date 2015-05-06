@@ -12,8 +12,8 @@ Quickly apply some fun or custom branding to your login screen
 Simple Custom Login allows you to set a custom login for your WordPress site without any code.
 
 Simple Custom Login allows you to: 
-- Upload a background image – it fills the space on any device
-- Choose from basic color options – in case your image doesn't look good with the default blue buttons & links
+* Upload a background image – it fills the space on any device
+* Choose from basic color options – in case your image doesn't look good with the default blue buttons & links
 
 Make your login screen uniquely yours in under 2 minutes (no frustration necessary)
 
