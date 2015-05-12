@@ -63,6 +63,9 @@ Unfortunately not, we're using a CSS property called backround-size: cover; that
 
 == Changelog ==
 
+= Beta =
+* New: Added i18n Support
+
 = 1.0.2 =
 * Fixed: Delete erroneous trunk included in distributed versions
 

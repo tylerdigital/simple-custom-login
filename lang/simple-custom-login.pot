@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple Custom Login\n"
+"POT-Creation-Date: 2015-05-11 18:44-0800\n"
+"PO-Revision-Date: 2015-05-11 18:44-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/settings.php:19
+msgid "Basic Settings"
+msgstr ""
+
+#: includes/settings.php:24
+msgid "Color scheme"
+msgstr ""
+
+#: includes/settings.php:25
+msgid "Changes the button colors on the login screen"
+msgstr ""
+
+#: includes/settings.php:29
+msgid "Default (blue)"
+msgstr ""
+
+#: includes/settings.php:30
+msgid "Red"
+msgstr ""
+
+#: includes/settings.php:31
+msgid "Green"
+msgstr ""
+
+#: includes/settings.php:37
+msgid "Background Image"
+msgstr ""
+
+#: includes/settings.php:38
+msgid "Upload a large image to use as the background of your login screen"
+msgstr ""
+
+#: includes/settings.php:45
+msgid "Logo Image"
+msgstr ""
+
+#: includes/settings.php:46
+msgid ""
+"Upload a logo image (260x80px recommended) to go above the login form "
+"(optional)"
+msgstr ""
+
+#: includes/settings.php:57
+msgid "Custom Login Settings"
+msgstr ""
+
+#: includes/settings.php:57
+msgid "Simple Custom Login"
+msgstr ""
+
+#: lib/options-buddy-master/fields/image.php:35
+msgid "Remove"
+msgstr ""
+
+#: lib/options-buddy-master/fields/image.php:39
+msgid "Browse"
+msgstr ""
+
+#: lib/options-buddy-master/fields/image.php:39
+msgid "Select"
+msgstr ""
+
+#: simple-custom-login.php:191
+msgid "Settings"
+msgstr ""
