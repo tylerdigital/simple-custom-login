@@ -112,7 +112,7 @@ class TDCustomLogin {
 	public function plugin_textdomain() {
 
 		// TODO: replace "simple-custom-login-locale" with a unique value for your plugin
-		$domain = 'simple-custom-login-locale';
+		$domain = 'simple-custom-login';
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 		load_textdomain( $domain, WP_LANG_DIR.'/'.$domain.'/'.$domain.'-'.$locale.'.mo' );
 		load_plugin_textdomain( $domain, FALSE, dirname( plugin_basename( __FILE__ ) ) . '/lang/' );
