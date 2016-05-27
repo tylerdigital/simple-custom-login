@@ -943,7 +943,7 @@ class OptionsBuddy_Settings_Page {
 			call_user_func( $section['callback'], $section );
 
 		if ( ! isset( $wp_settings_fields ) || !isset( $wp_settings_fields[$page] ) || !isset( $wp_settings_fields[$page][$section['id']] ) )
-			continue;
+			return;
 		echo '<table class="form-table">';
 		do_settings_fields( $page, $section['id'] );
 		echo '</table>';
