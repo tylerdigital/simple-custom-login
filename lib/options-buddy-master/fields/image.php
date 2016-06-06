@@ -36,7 +36,7 @@ class OptionsBuddy_Settings_Field_Image extends OptionsBuddy_Settings_Field{
        </div>
     <?php
         echo  "<input type='hidden' class='hidden-image-url' id='{$id}' name='{$id}' value='{$value}'/>";
-        echo  '<input type="button" class="button settings-upload-image-button" id="'. $id .'_button" value="'. _e('Browse', 'simple-custom-login').'" data-id="'.$id.'" data-btn-title="'._e('Select', 'simple-custom-login').'" data-uploader-title="'._e('Select', 'simple-custom-login').'" />';
+        echo  '<input type="button" class="button settings-upload-image-button" id="'. $id .'_button" value="'. __('Browse', 'simple-custom-login').'" data-id="'.$id.'" data-btn-title="'.__('Select', 'simple-custom-login').'" data-uploader-title="'.__('Select', 'simple-custom-login').'" />';
        
        
      
