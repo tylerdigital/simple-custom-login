@@ -2,8 +2,8 @@
 Contributors: tylerdigital, croixhaug, scampanella
 Tags: custom login, login background, login logo, login, wp-login, branding, login screen, theme login, style login
 Requires at least: 3.5.1
-Tested up to: 4.2
-Stable tag: 1.0.2
+Tested up to: 4.5
+Stable tag: 1.0.3
 
 Quickly apply some fun or custom branding to your login screen
 
@@ -63,10 +63,11 @@ Unfortunately not, we're using a CSS property called backround-size: cover; that
 
 == Changelog ==
 
-= Beta =
+= 1.0.3 =
 * New: Added i18n Support
 * New: Added Spanish language support
 * New: Added Portguuese language support (pt_PT, pt_BR)
+* Fixed: PHP7 Compatibility
 
 = 1.0.2 =
 * Fixed: Delete erroneous trunk included in distributed versions
